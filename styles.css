@@ -5,7 +5,7 @@ body {
 .common-list {
   display: grid;
   list-style-type: none;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 50px;
   text-align: left;
 }
