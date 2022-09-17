@@ -1,3 +1,7 @@
+body {
+  background-color: orange;
+}
+
 .common-list {
   display: grid;
   list-style-type: none;
@@ -5,14 +9,5 @@
   grid-gap: 50px;
 }
 
-.common-list-item{
-  background:red; color:#fff; font-size:30px;
-  height:200px; line-height:200px; text-align:center;
-}
 
 
-@media (max-width:590px){
-  .common-list{  
-  grid-template-columns:repeat(2, 1fr);  
-  }
-}
