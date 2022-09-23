@@ -68,3 +68,12 @@ function searchPokemonByIndex(){
     alert(searchOutput); //Output Search Result
     location.reload(); //Reload webpage upon exiting alert
 }
+
+//Limit Input Range for Index Search
+document.getElementById('indexSearch').oninput = 
+function(){
+    //Change Input Value upon exceeding specified range
+    let currentValue = parseInt(this.value);
+    if(currentValue < 1) this.value = 1;
+    if(currentValue > 20) this.value = 20;
+}
