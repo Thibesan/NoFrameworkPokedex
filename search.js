@@ -22,10 +22,18 @@ let pokeList = [
     {pokeNum:20,    name:"Raticate",      type:"Normal"}
 ]
 
-//Event Handler to search upon enter keypress
-function handle(e){
+//Event Handler to search by name upon enter keypress
+function handleNameSearch(e){
     if(e.keyCode === 13){ //13 is "Enter" key
-        searchPokemonByName(); //Function Call
+        searchPokemonByName(); //Function Call for Name Search
+    }
+    return false;
+}
+
+//Event Handler to search by index upon enter keypress
+function handleIndexSearch(e){
+    if(e.keyCode === 13){ //Enter key press
+        searchPokemonByIndex(); //Function call for Index Search
     }
     return false;
 }
@@ -50,3 +58,13 @@ function searchPokemonByName() {
     location.reload(); //Reload webpage upon exiting alert
 }
 
+function searchPokemonByIndex(){
+
+    let input = parseInt(document.getElementById('indexSearch').value); //Search Bar Input
+    console.log(input); //Test Input Values
+    
+    let searchOutput = JSON.stringify(pokeList[input - 1]); //Match desired input to pokeList Index
+
+    alert(searchOutput); //Output Search Result
+    location.reload(); //Reload webpage upon exiting alert
+}
