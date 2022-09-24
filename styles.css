@@ -2,6 +2,7 @@ body {
   background-color: orange;
 }
 
+/* Grid Layout Formatting */
 .common-list {
   display: grid;
   list-style-type: none;
@@ -10,7 +11,8 @@ body {
   text-align: left;
 }
 
+/* Individual Tile Formatting */
 .common-list-item {
   background-color: tan;
-  padding-left: 20px;
+  padding-left: 10px;
 }
