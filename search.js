@@ -1,6 +1,6 @@
 //Array of pokemon data categorized by number, name, and type
 let pokeList = [
-    {pokeNum:1,     name:'Bulbasoar',     type:"Grass/Poison ",      Stage:"1 ",     Move:"Sludge Bomb"},
+    {pokeNum:1,     name:'Bulbasaur',     type:"Grass/Poison ",      Stage:"1 ",     Move:"Sludge Bomb"},
     {pokeNum:2,     name:"Ivysaur",       type:"Grass/Poison ",      Stage:"2 ",     Move:"Sludge Bomb"},
     {pokeNum:3,     name:"Venusaur",      type:"Grass/Poison ",      Stage:"3 ",     Move:"Sludge Bomb"},
     {pokeNum:4,     name:"Charmander",    type:"Fire ",              Stage:"1 ",     Move:"Flame Burst"},
