@@ -77,3 +77,6 @@ function(){
     if(currentValue < 1) this.value = 1;
     if(currentValue > 20) this.value = 20;
 }
+
+//Test Changes for Lab 2 Branch
+console.log('Hello World');
