@@ -79,4 +79,8 @@ function(){
 }
 
 //Test Changes for Lab 2 Branch
-console.log('Hello World');
+const para = document.createElement('p');
+const node = document.createTextNode("This is new test.")
+para.appendChild(node);
+const htmlElement = document.getElementById("p1");
+htmlElement.appendChild(para);
