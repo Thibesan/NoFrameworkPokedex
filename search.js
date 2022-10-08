@@ -78,9 +78,34 @@ function(){
     if(currentValue > 20) this.value = 20;
 }
 
-//Test Changes for Lab 2 Branch
-const para = document.createElement('p');
-const node = document.createTextNode("This is new test.")
-para.appendChild(node);
-const htmlElement = document.getElementById("p1");
-htmlElement.appendChild(para);
+//Dynamic Search Results
+const ul = document.createElement('ul');
+ul.setAttribute('class','common-list');
+ul.setAttribute('id', 'unorderedList');
+
+document.getElementById('divBlock').appendChild(ul);
+
+for(x = 0; x < pokeList.length; x++){
+    var li = document.createElement('li')
+    li.setAttribute('class', 'common-list-item');
+
+    var img = document.createElement('img');
+
+
+ul.appendChild(li);
+li.appendChild(img);
+
+itemText = [
+    pokeList[x].pokeNum.toString(),
+    pokeList[x].name,
+    pokeList[x].type,
+    "Evolution Stage: " + pokeList[x].Stage, 
+    "Move: " + pokeList[x].Move]     
+
+for(i = 0; i < itemText.length; i++){
+    li.appendChild(document.createTextNode(itemText[i]));
+    li.appendChild(document.createElement('br'));
+}
+
+
+}
