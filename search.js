@@ -22,6 +22,32 @@ let pokeList = [
     {pokeNum:20,    name:"Raticate",      type:"Normal ",            Stage:"2 ",     Move:"Dig"}
 ]
 
+//Add Array of Pokemon Images to add with List Items for Dynamic Search Results\
+let pokeImages = [19]
+pokeImages[0] = "images/1.png";
+pokeImages[1] = "images/2.png";
+pokeImages[2] = "images/3.png";
+pokeImages[3] = "images/4.png";
+pokeImages[4] = "images/5.png";
+pokeImages[5] = "images/6.png";
+pokeImages[6] = "images/7.png";
+pokeImages[7] = "images/8.png";
+pokeImages[8] = "images/9.png";
+pokeImages[9] = "images/10.png";
+pokeImages[10] = "images/11.png";
+pokeImages[11] = "images/12.png";
+pokeImages[12] = "images/13.png";
+pokeImages[13] = "images/14.png";
+pokeImages[14] = "images/15.png";
+pokeImages[15] = "images/16.png";
+pokeImages[16] = "images/17.png";
+pokeImages[17] = "images/18.png";
+pokeImages[18] = "images/19.png";
+pokeImages[19] = "images/20.png";
+
+
+console.log(pokeImages[0]);
+
 //Event Handler to search by name upon enter keypress
 function handleNameSearch(e){
     if(e.keyCode === 13){ //13 is "Enter" key
@@ -90,10 +116,15 @@ for(x = 0; x < pokeList.length; x++){
     li.setAttribute('class', 'common-list-item');
 
     var img = document.createElement('img');
+    img.setAttribute('width', '150');
+    img.setAttribute('height', '150');
+    img["src"] = pokeImages[x];
+
 
 
 ul.appendChild(li);
 li.appendChild(img);
+li.appendChild(document.createElement('br'))
 
 itemText = [
     pokeList[x].pokeNum.toString(),
