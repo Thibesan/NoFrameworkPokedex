@@ -14,7 +14,7 @@
 
 
 <!-- Search Bars -->
-<input id="nameSearch" onkeypress="handleNameSearch(event)" type="text"
+<input id="nameSearch" onkeyup="dynamicSearchName()" type="text"
     placeholder="Search by Name">
 
 <input id="indexSearch" onkeypress="handleIndexSearch(event)" type="number"
@@ -24,7 +24,7 @@
 <div id = "divBlock"></div>
 
 <!-- Unordered List Elements for Pokedex, with respective tags and details -->
-<ul class="common-list">
+<ul class="common-list" id="pokemonList">
     <li class="common-list-item">
         <img src="images\1.png" alt="img1" width="150" height="150">
         <br> 001 <br> Bulbasaur <br> Grass/Poison <br> Evolution Stage: 1 <br> 

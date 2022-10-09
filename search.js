@@ -46,8 +46,6 @@ pokeImages[18] = "images/19.png";
 pokeImages[19] = "images/20.png";
 
 
-console.log(pokeImages[0]);
-
 //Event Handler to search by name upon enter keypress
 function handleNameSearch(e){
     if(e.keyCode === 13){ //13 is "Enter" key
@@ -120,23 +118,42 @@ for(x = 0; x < pokeList.length; x++){
     img.setAttribute('height', '150');
     img["src"] = pokeImages[x];
 
+    ul.appendChild(li);
+    li.appendChild(img);
+    li.appendChild(document.createElement('br'))
+    li.style.display = "none";
 
-
-ul.appendChild(li);
-li.appendChild(img);
-li.appendChild(document.createElement('br'))
-
-itemText = [
+    itemText = [
     pokeList[x].pokeNum.toString(),
     pokeList[x].name,
     pokeList[x].type,
     "Evolution Stage: " + pokeList[x].Stage, 
     "Move: " + pokeList[x].Move]     
 
-for(i = 0; i < itemText.length; i++){
-    li.appendChild(document.createTextNode(itemText[i]));
-    li.appendChild(document.createElement('br'));
+    for(i = 0; i < itemText.length; i++){
+        li.appendChild(document.createTextNode(itemText[i]));
+        li.appendChild(document.createElement('br'));
+    }
 }
+//Dynamic Search Filter by Index
+function dynamicSearchIndex(){
+    var input, filter, ul, li, a, x, textValue;
+    input = document.getElementById('indexSearch');
+    filter = input.value.toLowerCase();
+    ul = document.getElementById('unorderedList');
+    li = ul.getElementsByTagName('li');
 
-
-}
+    if(input.value.length === 0){
+        ul.style.display = "none";
+    }else{
+        ul.style.display = "";
+        for(x = 0; x < li.length; x++){
+            textValue = pokeList[x].pokeNum;
+            if(textValue.toLowerCase().indexOf(filter) > -1){
+                li[x].style.display = "";
+            } else{
+                li[x].style.display = "none";
+            }
+        }
+    }
+}   
