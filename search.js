@@ -1,25 +1,25 @@
 //Array of pokemon data categorized by number, name, and type
 let pokeList = [
-    {pokeNum:1,     name:'Bulbasaur',     type:"Grass/Poison ",      Stage:"1 ",     Move:"Sludge Bomb"},
-    {pokeNum:2,     name:"Ivysaur",       type:"Grass/Poison ",      Stage:"2 ",     Move:"Sludge Bomb"},
-    {pokeNum:3,     name:"Venusaur",      type:"Grass/Poison ",      Stage:"3 ",     Move:"Sludge Bomb"},
-    {pokeNum:4,     name:"Charmander",    type:"Fire ",              Stage:"1 ",     Move:"Flame Burst"},
-    {pokeNum:5,     name:"Charmeleon",    type:"Fire ",              Stage:"2 ",     Move:"Flame Burst"},
-    {pokeNum:6,     name:"Charizard",     type:"Fire/Flying ",       Stage:"3 ",     Move:"Fire Blast"},
-    {pokeNum:7,     name:"Squirtle",      type:"Water ",             Stage:"1 ",     Move:"Aqua Jet"},
-    {pokeNum:8,     name:"Wartortle",     type:"Water ",             Stage:"2 ",     Move:"Aqua Jet"},
-    {pokeNum:9,     name:"Blastoise",     type:"Water ",             Stage:"3 ",     Move:"Ice Beam"},
-    {pokeNum:10,    name:"Caterpie",      type:"Bug ",               Stage:"1 ",     Move:"Struggle"},
-    {pokeNum:11,    name:"Metapod",       type:"Bug ",               Stage:"2 ",     Move:"Struggle"},
-    {pokeNum:12,    name:"Butterfree",    type:"Bug/Flying ",        Stage:"3 ",     Move:"Psychic"},
-    {pokeNum:13,    name:"Weedle",        type:"Bug/Poison ",        Stage:"1 ",     Move:"Struggle"},
-    {pokeNum:14,    name:"Kakuna",        type:"Bug/Poison ",        Stage:"2 ",     Move:"Struggle"},
-    {pokeNum:15,    name:"Beedrill",      type:"Bug/Poison ",        Stage:"3 ",     Move:"Aerial Ace"},
-    {pokeNum:16,    name:"Pidgey",        type:"Normal/Flying ",     Stage:"1 ",     Move:"Twister"},
-    {pokeNum:17,    name:"Pidgeotto",     type:"Normal/Flying ",     Stage:"2 ",     Move:"Twister"},
-    {pokeNum:18,    name:"Pidgeot",       type:"Normal/Flying ",     Stage:"3 ",     Move:"Hurricane"},
-    {pokeNum:19,    name:"Rattata",       type:"Normal ",            Stage:"1 ",     Move:"Dig"},
-    {pokeNum:20,    name:"Raticate",      type:"Normal ",            Stage:"2 ",     Move:"Dig"}
+    {pokeNum:'001',    name:'Bulbasaur',     type:"Grass/Poison ",      Stage:"1 ",     Move:"Sludge Bomb"},
+    {pokeNum:'002',    name:"Ivysaur",       type:"Grass/Poison ",      Stage:"2 ",     Move:"Sludge Bomb"},
+    {pokeNum:'003',    name:"Venusaur",      type:"Grass/Poison ",      Stage:"3 ",     Move:"Sludge Bomb"},
+    {pokeNum:'004',    name:"Charmander",    type:"Fire ",              Stage:"1 ",     Move:"Flame Burst"},
+    {pokeNum:'005',    name:"Charmeleon",    type:"Fire ",              Stage:"2 ",     Move:"Flame Burst"},
+    {pokeNum:'006',    name:"Charizard",     type:"Fire/Flying ",       Stage:"3 ",     Move:"Fire Blast"},
+    {pokeNum:'007',    name:"Squirtle",      type:"Water ",             Stage:"1 ",     Move:"Aqua Jet"},
+    {pokeNum:'008',    name:"Wartortle",     type:"Water ",             Stage:"2 ",     Move:"Aqua Jet"},
+    {pokeNum:'009',    name:"Blastoise",     type:"Water ",             Stage:"3 ",     Move:"Ice Beam"},
+    {pokeNum:'010',    name:"Caterpie",      type:"Bug ",               Stage:"1 ",     Move:"Struggle"},
+    {pokeNum:'011',    name:"Metapod",       type:"Bug ",               Stage:"2 ",     Move:"Struggle"},
+    {pokeNum:'012',    name:"Butterfree",    type:"Bug/Flying ",        Stage:"3 ",     Move:"Psychic"},
+    {pokeNum:'013',    name:"Weedle",        type:"Bug/Poison ",        Stage:"1 ",     Move:"Struggle"},
+    {pokeNum:'014',    name:"Kakuna",        type:"Bug/Poison ",        Stage:"2 ",     Move:"Struggle"},
+    {pokeNum:'015',    name:"Beedrill",      type:"Bug/Poison ",        Stage:"3 ",     Move:"Aerial Ace"},
+    {pokeNum:'016',    name:"Pidgey",        type:"Normal/Flying ",     Stage:"1 ",     Move:"Twister"},
+    {pokeNum:'017',    name:"Pidgeotto",     type:"Normal/Flying ",     Stage:"2 ",     Move:"Twister"},
+    {pokeNum:'018',    name:"Pidgeot",       type:"Normal/Flying ",     Stage:"3 ",     Move:"Hurricane"},
+    {pokeNum:'019',    name:"Rattata",       type:"Normal ",            Stage:"1 ",     Move:"Dig"},
+    {pokeNum:'020',    name:"Raticate",      type:"Normal ",            Stage:"2 ",     Move:"Dig"}
 ]
 
 //Add Array of Pokemon Images to add with List Items for Dynamic Search Results\
@@ -135,6 +135,28 @@ for(x = 0; x < pokeList.length; x++){
         li.appendChild(document.createElement('br'));
     }
 }
+//Dynamic Search Filter by Name
+function dynamicSearchName(){
+    var input, filter, ul, li, a, x, textValue;
+    input = document.getElementById('nameSearch');
+    filter = input.value.toLowerCase();
+    ul = document.getElementById('unorderedList');
+    li = ul.getElementsByTagName('li');
+
+    if(input.value.length === 0){
+        ul.style.display = "none";
+    }else{
+        ul.style.display = "";
+        for(x = 0; x < li.length; x++){
+            textValue = pokeList[x].name;
+            if(textValue.toLowerCase().indexOf(filter) > -1){
+                li[x].style.display = "";
+            } else{
+                li[x].style.display = "none";
+            }
+        }
+    }
+}   
 //Dynamic Search Filter by Index
 function dynamicSearchIndex(){
     var input, filter, ul, li, a, x, textValue;
