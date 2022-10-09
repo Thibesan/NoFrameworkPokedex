@@ -104,15 +104,15 @@ function(){
 
 //Dynamic Search Results
 const ul = document.createElement('ul');
-ul.setAttribute('class','common-list');
+ul.setAttribute('class','results-list');
 ul.setAttribute('id', 'unorderedList');
 
 document.getElementById('divBlock').appendChild(ul);
 
 for(x = 0; x < pokeList.length; x++){
     var li = document.createElement('li')
-    li.setAttribute('class', 'common-list-item');
-
+    li.setAttribute('class', 'results-list-item');
+    
     var img = document.createElement('img');
     img.setAttribute('width', '150');
     img.setAttribute('height', '150');

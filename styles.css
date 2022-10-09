@@ -1,5 +1,5 @@
 body {
-  background-color: orange;
+  background-color: cornflowerblue;
 }
 
 /* Grid Layout Formatting */
@@ -11,8 +11,26 @@ body {
   text-align: left;
 }
 
+/* Dynamic Results Formatting */
+.results-list {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-row-gap: 50px;
+  grid-column-gap: 100px;
+  text-align: left;
+  background-color: black;
+}
+
 /* Individual Tile Formatting */
 .common-list-item {
   background-color: tan;
   padding-left: 10px;
+}
+
+/* Results Tile Formatting */
+.results-list-item {
+  background-color: aqua;
+  padding-left: 10px;
+  border-radius: 10%;
 }
